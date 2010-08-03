@@ -118,4 +118,6 @@ L & long double (e, f, g) \\
 \lstinputlisting[language=c, label=printf, caption={printf}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/printf.cpp}
 
 
+\lstinputlisting[language=c, label=modelo3, caption={modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
+
 \end{document}

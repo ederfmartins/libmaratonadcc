@@ -1,15 +1,15 @@
-%\documentclass[10pt,twocolumn, a4paper]{article}
-\documentclass[a4paper,twocolumn, 10pt, landscape]{article}
+%\documentclass[10pt,a4paper]{article}
+\documentclass[a4paper,twocolumn, 10pt, landscape]{book}
 \usepackage[brazil]{babel}
+%\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc}
 
 \usepackage[cm]{fullpage}
 
-\usepackage[left=1cm,top=1cm,right=1cm,bottom=1cm,nohead,nofoot]{geometry}
+\usepackage[left=1cm,top=1cm,right=0cm,nohead,nofoot]{geometry}
 
 
 \usepackage{listings} %% Para codigos fonte
-\usepackage{float}
 
 \lstset{numbers=left,
 stepnumber=1,
@@ -18,24 +18,19 @@ numberstyle=\tiny,
 extendedchars=true,
 breaklines=true,
 frame=tb,
-captionpos=b,
-tabsize=3, % sets default tabsize to 2 spaces
 basicstyle=\footnotesize,
 stringstyle=\ttfamily,
 showstringspaces=false
 }
 \renewcommand{\lstlistingname}{Código}
-\renewcommand{\lstlistlistingname}{Lista de Listagens}
 
-
-
+\makeindex
 \begin{document}
-\listoftables
-\lstlistoflistings
 
-\section{Tabelas}
+\lstinputlisting[language=c, label=modelo, caption={Modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
+\lstinputlisting[language=c, label=vim, caption={.vimrc para a configuração do vim}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/vim.cpp}
 
-\begin{table}[!h]
+\begin{table}
 % use packages: array
 \begin{tabular}{llll}
 tipo & bits & min...max & precisao \\ 
@@ -50,13 +45,8 @@ int64\_t & 64 & -9 x 10**18 .. 9 x 10**18 & 18 \\
 uint64\_t & 64 & 0 .. 18 x 10**18 & 19
 \end{tabular}
 \caption{Limites de representação de dados}
-\label{limites}
 \end{table}
 
-
-\begin{table}
-% use packages: array
-\begin{tabular}{ll}
 0! = 1 \\
 1! = 1 \\
 2! = 2 \\
@@ -78,12 +68,17 @@ uint64\_t & 64 & 0 .. 18 x 10**18 & 19
 18! = 6.402.373.705.728.000 \\
 19! = 121.645.100.408.832.000 \\
 20! = 2.432.902.008.176.640.000 [limite do (u)int64\_t] \\
-\end{tabular}
-\caption{Fatorial}
-\label{Fatorial}
-\end{table}
 
-\begin{table}
+scanf()
+\%[*][width][modifiers]type
+
+width Specifies the maximum number of characters to be read in the current reading operation
+modifiers
+h : short int (for d, i and n), or unsigned short int (for o, u and x)
+l : long int (for d, i and n), or unsigned long int (for o, u and x), or double (for e, f and g)
+L : long double (for e, f and g)
+
+\begin{center}
 % use packages: array
 \begin{tabular}{ll}
 Tipe & \% \\ 
@@ -95,27 +90,12 @@ int (hexa) & x, X \\
 uint & u \\ 
 char* & s
 \end{tabular}
-\caption{scanf() - \%[*][width][modifiers]type}
-\label{tipos}
-\end{table}
+\end{center}
 
-\begin{table}
- \begin{tabular}{ll}
-modifiers & tipo \\ 
-h & short int (d, i, n), or unsigned short int (o, u, x) \\ 
-l & long int (d, i, n), or unsigned long int (o, u, x), or double (e, f, g) \\ 
-L & long double (e, f, g) \\ 
-\end{tabular}
-\caption{scanf() \%[*][width][modifiers]type}
-\label{modifiers}
-\end{table}
 
-\section{Codigos}
 
-\lstinputlisting[language=c, label=modelo, caption={Modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
-\lstinputlisting[language=c, label=cmp, caption={comparcao de ponto flutuante}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/cmp.cpp}
-\lstinputlisting[language=c, label=vim, caption={.vimrc para a configuração do vim}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/vim.cpp}
-\lstinputlisting[language=c, label=printf, caption={printf}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/printf.cpp}
 
+\lstinputlisting[language=c, label=modelo2, caption={modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
+\lstinputlisting[language=c, label=modelo3, caption={modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
 
 \end{document}
