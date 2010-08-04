@@ -110,13 +110,68 @@ L & long double (e, f, g) \\
 \label{modifiers}
 \end{table}
 
+
+\begin{table}
+ \begin{tabular}{lll}
+função & descrição \\
+atof & Convert string to double \\
+atoi & Convert string to integer \\
+atol & Convert string to long integer \\
+strtod & Convert string to double \\
+strtol & Convert string to long integer \\
+strtoul & Convert string to unsigned long integer \\
+\end{tabular}
+\caption{stdlib}
+\label{stdlib functions}
+\end{table}
+
+\begin{table}
+ \begin{tabular}{lll}
+função & descrição \\
+cos &	 Compute cosine  \\
+sin &	Compute sine  \\
+tan &	Compute tangent  \\
+acos &	Compute arc cosine  \\
+asin &	Compute arc sine  \\
+atan &	Compute arc tangent  \\
+atan2 &	Compute arc tangent with two parameters  \\
+cosh &	Compute hyperbolic cosine  \\
+sinh &	Compute hyperbolic sine  \\
+tanh &	Compute hyperbolic tangent  \\
+exp &	Compute exponential function  \\
+frexp &	Get significand and exponent  \\
+ldexp &	Generate number from significand and exponent  \\
+log &	Compute natural logarithm  \\
+log10 &	Compute common logarithm  \\
+modf &	Break into fractional and integral parts  \\
+pow &	Raise to power  \\
+sqrt &	Compute square root  \\
+ceil &	Round up value  \\
+fabs &	Compute absolute value  \\
+floor &	Round down value  \\
+fmod &	Compute remainder of division  \\
+\end{tabular}
+\caption{math}
+\label{math functions}
+\end{table}
+
 \section{Codigos}
 
 \lstinputlisting[language=c, label=modelo, caption={Modelo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/modelo.cpp}
 \lstinputlisting[language=c, label=cmp, caption={comparcao de ponto flutuante}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/cmp.cpp}
 \lstinputlisting[language=c, label=vim, caption={.vimrc para a configuração do vim}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/vim.cpp}
 \lstinputlisting[language=c, label=printf, caption={printf}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/printf.cpp}
+\lstinputlisting[language=c, label=map, caption={exemplo de map}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/map_ex.cpp}
+\lstinputlisting[language=c, label=multset, caption={exemplo de set e multset}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/multset_ex.cpp}
+\lstinputlisting[language=c, label=list, caption={exemplo de list}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/list_ex.cpp}
+\lstinputlisting[language=c, label=queue, caption={exemplo de queue}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/queue_ex.cpp}
 \lstinputlisting[language=c, label=pq, caption={exemplo de priority queue}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/priority_queue_ex.cpp}
-\lstinputlisting[language=c, label=multset, caption={exemplo de multset}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/multset_ex.cpp}
+\lstinputlisting[language=c, label=stack, caption={exemplo de stack}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/stack_ex.cpp}
+\lstinputlisting[language=c, label=vector, caption={exemplo de vector}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/vector_ex.cpp}
+
+\lstinputlisting[language=c, label=sort, caption={exemplo de ordenação}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/sort_ex.cpp}
+\lstinputlisting[language=c, label=bsearch, caption={pesquisa binária}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/bsearch_ex.cpp}
+
+% TODO: stringstream, arredondamento, grafos, big int, sistemas lineares, mmc e mdc, primos, fluxo máximo e simplex, polinomios.
 
 \end{document}
