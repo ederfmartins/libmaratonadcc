@@ -86,7 +86,7 @@ uint64\_t & 64 & 0 .. 18 x 10**18 & 19
 \begin{table}
 % use packages: array
 \begin{tabular}{ll}
-Tipe & \% \\ 
+Tipo & \% \\ 
 char & c \\ 
 int & d \\ 
 float & e, E, f, g, G \\ 
@@ -128,7 +128,7 @@ strtoul & Convert string to unsigned long integer \\
 \begin{table}
  \begin{tabular}{lll}
 função & descrição \\
-cos &	 Compute cosine  \\
+cos &	Compute cosine  \\
 sin &	Compute sine  \\
 tan &	Compute tangent  \\
 acos &	Compute arc cosine  \\
@@ -151,9 +151,11 @@ fabs &	Compute absolute value  \\
 floor &	Round down value  \\
 fmod &	Compute remainder of division  \\
 \end{tabular}
-\caption{math}
+\caption{math (angulos em radianos)}
 \label{math functions}
 \end{table}
+
+%\input{primesTable.tex}
 
 \section{Codigos}
 
@@ -172,6 +174,14 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=sort, caption={exemplo de ordenação}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/sort_ex.cpp}
 \lstinputlisting[language=c, label=bsearch, caption={pesquisa binária}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/bsearch_ex.cpp}
 
-% TODO: stringstream, arredondamento, grafos, big int, sistemas lineares, mmc e mdc, primos, fluxo máximo e simplex, polinomios.
+\lstinputlisting[language=c, label=arredondamento, caption={Arredondamento e output em outras bases}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/arredondamento_ex.cpp}
+
+\lstinputlisting[language=c, label=mdc, caption={máximo divisor comum e mínimo multiplo comum}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/mdc_mmc.cpp}
+\lstinputlisting[language=c, label=primo, caption={decide se um número é primo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/isPrime.cpp}
+\lstinputlisting[language=c, label=fatores, caption={Retorna a fatoração em números primos de abs(n).}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/primeMap.cpp}
+
+% TODO: arredondamento, grafos, big int, sistemas lineares, fluxo máximo e simplex, polinomios.
+
+% std::ios::sync_with_stdio(false);
 
 \end{document}

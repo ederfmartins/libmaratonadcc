@@ -8,18 +8,18 @@ int main()
    printf ("Preceding with blanks: %10d \n", 1977);
    printf ("Preceding with zeros: %010d \n", 1977);
    printf ("Some different radixes: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
-   printf ("floats: %4.2f %+.0e %E \n", 3.1416, 3.1416, 3.1416);
+   printf ("floats: %4.2f %+.0e %E %4.2f\n", 3.1416, 3.1416, 3.1416, 3.1);
    printf ("Width trick: %*d \n", 5, 10);
    printf ("%s \n", "A string");
    return 0;
 }
-/* output
+/* %[flags (-, +, etc)][width][.precision][length (h,l,L)]specifier
 Characters: a A
 Decimals: 1977 650000
 Preceding with blanks:       1977
 Preceding with zeros: 0000001977
 Some different radixes: 100 64 144 0x64 0144
-floats: 3.14 +3e+000 3.141600E+000
+floats: 3.14 +3e+000 3.141600E+000 3.10
 Width trick:    10
 A string
 */
