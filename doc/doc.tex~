@@ -185,7 +185,6 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=setForest, caption={Floresta dijunta de arvores}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/dijointSetForest.cpp}
 
 \lstinputlisting[language=c, label=kruskal, caption={Arvore geradora mínima kruskal}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/kruskal.cpp}
-\lstinputlisting[language=c, label=bipartido, caption={verifica se um grafo é bipartido}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/bipartido.cpp}
 
 \lstinputlisting[language=c, label=josephus, caption={josephus problem}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/josephus.cpp}
 

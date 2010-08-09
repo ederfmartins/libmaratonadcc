@@ -180,16 +180,7 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=primo, caption={decide se um número é primo}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/isPrime.cpp}
 \lstinputlisting[language=c, label=fatores, caption={Retorna a fatoração em números primos de abs(n).}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/primeMap.cpp}
 
-\lstinputlisting[language=c, label=dijkstra, caption={Caminho minimo 1 para todos pesos positivos.}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/dijkstra.cpp}
-
-\lstinputlisting[language=c, label=setForest, caption={Floresta dijunta de arvores}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/dijointSetForest.cpp}
-
-\lstinputlisting[language=c, label=kruskal, caption={Arvore geradora mínima kruskal}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/kruskal.cpp}
-\lstinputlisting[language=c, label=bipartido, caption={verifica se um grafo é bipartido}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/bipartido.cpp}
-
-\lstinputlisting[language=c, label=josephus, caption={josephus problem}]{/home/vod/ederfm/maratona/libmaratonadcc/doc/src/josephus.cpp}
-
-% TODO: arredondamento, grafos (dijkstra, arvore geradora, componentes conexas, ordenação topologica, pontos de articulação e pontes), big int, sistemas lineares, fluxo máximo e simplex, polinomios.
+% TODO: stringstream, arredondamento, grafos, big int, sistemas lineares, mmc e mdc, primos, fluxo máximo e simplex, polinomios.
 
 % std::ios::sync_with_stdio(false);
 
