@@ -60,7 +60,8 @@ void kruskal(Grafo& graph, Grafo& mst)
     struct edge *edges = get_edge_list(graph);
     qsort(edges, edge_count, sizeof(struct edge), edge_compare);
 
-    disjoint_set_forest_p dsf = dsf_alloc(edge_count);
+    disjoint_set_forest dsf;
+	dsf_init(&dsf, edge_count);
 
     for (int i = 0; i < edge_count; ++i)
     {
@@ -69,11 +70,11 @@ void kruskal(Grafo& graph, Grafo& mst)
         int vset = dsf_find_set(dsf, e.v);
         if (uset != vset)
         {
-            mst.adj[e.u][e.v] = e.weight; mst.edgeCnt++;
+            mst.adj[e.u][e.v] = e.weight;
+			mst.edgeCnt++;
             dsf_union(dsf, uset, vset);
         }
     }
 
-    dsf_free(dsf);
     free(edges);
 }

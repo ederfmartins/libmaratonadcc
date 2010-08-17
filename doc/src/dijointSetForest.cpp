@@ -1,36 +1,21 @@
+#define SIZE 100
+
 struct dsf
 {
     int element_count;
-    int *parent;
-    int *rank;
+    int parent[SIZE];
+    int rank[SIZE];
 };
 typedef struct dsf * disjoint_set_forest_p;
 
-disjoint_set_forest_p dsf_alloc(int element_count)
+void dsf_init(disjoint_set_forest_p forest, int element_count)
 {
-    disjoint_set_forest_p forest = (disjoint_set_forest_p) malloc(sizeof(struct dsf));
+	forest->element_count = element_count;
+	memset(forest->parent, 0, element_count*sizeof(int));
+	memset(forest->rank, 0, element_count*sizeof(int));
 
-    forest->element_count = element_count;
-    forest->parent = (int*) calloc(element_count, sizeof(int));
-    forest->rank = (int*) calloc(element_count, sizeof(int));
-
-    for (int i = 0; i < element_count; ++i)
-        forest->parent[i] = i;
-
-    return forest;
-}
-
-void dsf_free(disjoint_set_forest_p forest)
-{
-    if (forest)
-    {
-        free(forest->parent);
-        free(forest->rank);
-        forest->element_count = 0;
-        forest->parent = NULL;
-        forest->rank = NULL;
-        free(forest);
-    }
+	for (int i = 0; i < element_count; ++i)
+		forest->parent[i] = i;
 }
 
 int dsf_find_set(disjoint_set_forest_p forest, int i)
