@@ -1,19 +1,22 @@
 struct point
 {
 	double x, y;
-	point(double x = 0, double y = 0): x(x), y(y) {}
+	double z; // para pontos no espaço
+	point(double x = 0, double y = 0, double z = 0): x(x), y(y), z(z) {}
 
-	point operator +(point q) { return point(x + q.x, y + q.y); }
-	point operator -(point q) { return point(x - q.x, y - q.y); }
-	point operator *(double t) { return point(x * t, y * t); }
-	point operator /(double t) { return point(x / t, y / t); }
-	double operator *(point q) { return x * q.x + y * q.y; }
+	point operator +(point q) { return point(x + q.x, y + q.y, z + q.z); }
+	point operator -(point q) { return point(x - q.x, y - q.y, z - q.z); }
+	point operator *(double t) { return point(x * t, y * t, z * t); }
+	point operator /(double t) { return point(x / t, y / t, z / t); }
+	double operator *(point q) { return x * q.x + y * q.y + z * q.z; }
+	point vec(point q) { return point(y * q.z - z * q.y, z * q.x - x * q.z, x * q.y - y * q.x); }
 	double operator %(point q) { return x * q.y - y * q.x; }
 
 	int cmp(point q) const
 	{
 		if (int t = ::cmp(x, q.x)) return t;
-		return ::cmp(y, q.y);
+		else if (int t = ::cmp(y, q.y)) return t;
+		return ::cmp(z, q.z);
 	}
 
 	bool operator ==(point q) const { return cmp(q) == 0; }
@@ -21,11 +24,12 @@ struct point
 	bool operator < (point q) const { return cmp(q) < 0; }
 
 	friend ostream& operator <<(ostream& o, point p) {
-	  return o << "(" << p.x << ", " << p.y << ")";
+	  return o << "(" << p.x << ", " << p.y << ", " << p.z << ")";
 	}
 	static point pivot;
 };
 
+// para pontos 2D
 double abs(point p) { return hypot(p.x, p.y); }
 double arg(point p) { return atan2(p.y, p.x); }
 
