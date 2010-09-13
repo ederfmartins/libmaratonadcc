@@ -5,6 +5,7 @@
 
 #include <inttypes.h>
 #include <ctype.h>
+#include <limits.h>
 
 #include <algorithm>
 #include <utility>
