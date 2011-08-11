@@ -1,7 +1,7 @@
 struct point
 {
 	double x, y;
-	double z; // para pontos no espaço
+	double z; // para pontos no espaco
 	point(double x = 0, double y = 0, double z = 0): x(x), y(y), z(z) {}
 
 	point operator +(point q) { return point(x + q.x, y + q.y, z + q.z); }

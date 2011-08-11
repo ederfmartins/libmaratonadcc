@@ -1,5 +1,5 @@
-\documentclass[10pt,twocolumn, a4paper]{article}
-%\documentclass[a4paper,twocolumn, 10pt, landscape]{article}
+%\documentclass[10pt,twocolumn, a4paper]{article}
+\documentclass[a4paper,twocolumn, 10pt, landscape]{article}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 
@@ -18,14 +18,20 @@ numberstyle=\tiny,
 extendedchars=true,
 breaklines=true,
 frame=tb,
-captionpos=b,
+captionpos=t,
 tabsize=3, % sets default tabsize to 2 spaces
 basicstyle=\footnotesize,
 stringstyle=\ttfamily,
-showstringspaces=false
+showstringspaces=false,
+numbersep=5pt, % how far the line-numbers are from the code
+%frame=single, % adds a frame around the code
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=0pt,
+framexbottommargin=4pt
 }
 \renewcommand{\lstlistingname}{Código}
-\renewcommand{\lstlistlistingname}{Lista de Listagens}
+\renewcommand{\lstlistlistingname}{Algoritmos}
 
 
 
@@ -205,6 +211,9 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=segdist, caption={Calcula a distância do ponto r ao segmento pq. }]{src/segDist.cpp}
 \lstinputlisting[language=c, label=inpoly, caption={Classifica o ponto p em relação ao polígono T. Retorna 0, -1 ou 1 dependendo se p está no exterior, na fronteira ou no interior de T, respectivamente.}]{src/inpoly.cpp}
 
+
+\subsection{Casamento de strings}
+\lstinputlisting[language=c, label=kmp, caption={String matching - Algoritmo KMP - O( n + m)}]{src/kmp.cpp}
 
 \subsection{Outros}
 \lstinputlisting[language=c, label=josephus, caption={josephus problem}]{src/josephus.cpp}

@@ -14,6 +14,8 @@
 #include <map>
 #include <set>
 #include <vector>
+#include <list>
+#include <queue>
 #include <sstream>
 
 using namespace std;
