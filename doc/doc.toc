@@ -1,0 +1,12 @@
+\select@language {brazil}
+\contentsline {section}{\numberline {1}Tabelas}{2}
+\contentsline {section}{\numberline {2}Codigos}{3}
+\contentsline {subsection}{\numberline {2.1}Exemplos}{3}
+\contentsline {subsection}{\numberline {2.2}Teoria dos n\IeC {\'u}meros}{8}
+\contentsline {subsection}{\numberline {2.3}Grafos}{8}
+\contentsline {subsection}{\numberline {2.4}Geometria}{13}
+\contentsline {subsection}{\numberline {2.5}Casamento de strings}{14}
+\contentsline {subsection}{\numberline {2.6}Outros}{15}
+\contentsline {section}{\numberline {3}Biblioteca C/C++}{16}
+\contentsline {subsection}{\numberline {3.1}I/O}{16}
+\contentsline {subsection}{\numberline {3.2}Map}{16}
