@@ -1,0 +1,243 @@
+%\documentclass[10pt,twocolumn, a4paper]{article}
+\documentclass[a4paper,twocolumn, 10pt, landscape]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[cm]{fullpage}
+
+\usepackage[left=1cm,top=1cm,right=1cm,bottom=1cm,nohead,nofoot]{geometry}
+
+
+\usepackage{listings} %% Para codigos fonte
+\usepackage{float}
+
+\lstset{numbers=left,
+stepnumber=1,
+firstnumber=1,
+numberstyle=\tiny,
+extendedchars=true,
+breaklines=true,
+frame=tb,
+captionpos=t,
+tabsize=3, % sets default tabsize to 2 spaces
+basicstyle=\footnotesize,
+stringstyle=\ttfamily,
+showstringspaces=false,
+numbersep=5pt, % how far the line-numbers are from the code
+%frame=single, % adds a frame around the code
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=0pt,
+framexbottommargin=4pt
+}
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Algoritmos}
+
+
+
+\begin{document}
+\tableofcontents
+\listoftables
+\lstlistoflistings
+
+\newpage
+
+\section{Tabelas}
+
+\begin{table}[!h]
+% use packages: array
+\begin{tabular}{llll}
+tipo & bits & min...max & precisao \\ 
+char & 8 & 0..127 & 2 \\ 
+signed char & 8 & -128..127 & 2 \\ 
+unsigned char & 8 & 0..255 & 2 \\ 
+short & 16 & -32.768 .. 32.767 & 4 \\ 
+unsigned short & 16 & 0 .. 65.535 & 4 \\ 
+int & 32 & -2x10**9 .. 2 x 10**9 & 9 \\ 
+unsigned int & 32 & 0 .. 4x10**9 & 9 \\ 
+int64\_t & 64 & -9 x 10**18 .. 9 x 10**18 & 18 \\ 
+uint64\_t & 64 & 0 .. 18 x 10**18 & 19
+\end{tabular}
+\caption{Limites de representação de dados}
+\label{limites}
+\end{table}
+
+
+\begin{table}[!h]
+% use packages: array
+\begin{tabular}{ll}
+0! = 1 \\
+1! = 1 \\
+2! = 2 \\
+3! = 6 \\
+4! = 24 \\
+5! = 120 \\
+6! = 720 \\
+7! = 5.040 \\
+8! = 40.320 \\
+9! = 362.880 \\
+10! = 3.628.800 \\
+11! = 39.916.800 \\
+12! = 479.001.600 [limite do (unsigned) int] \\
+13! = 6.227.020.800 \\
+14! = 87.178.291.200 \\
+15! = 1.307.674.368.000 \\
+16! = 20.922.789.888.000 \\
+17! = 355.687.428.096.000 \\
+18! = 6.402.373.705.728.000 \\
+19! = 121.645.100.408.832.000 \\
+20! = 2.432.902.008.176.640.000 [limite do (u)int64\_t] \\
+\end{tabular}
+\caption{Fatorial}
+\label{Fatorial}
+\end{table}
+
+\begin{table}
+% use packages: array
+\begin{tabular}{ll}
+Tipo & \% \\ 
+char & c \\ 
+int & d \\ 
+float & e, E, f, g, G \\ 
+int (octal) & o \\ 
+int (hexa) & x, X \\ 
+uint & u \\ 
+char* & s
+\end{tabular}
+\caption{scanf() - \%[*][width][modifiers]type}
+\label{tipos}
+\end{table}
+
+\begin{table}
+ \begin{tabular}{ll}
+modifiers & tipo \\ 
+h & short int (d, i, n), or unsigned short int (o, u, x) \\ 
+l & long int (d, i, n), or unsigned long int (o, u, x), or double (e, f, g) \\ 
+L & long double (e, f, g) \\ 
+\end{tabular}
+\caption{scanf() \%[*][width][modifiers]type}
+\label{modifiers}
+\end{table}
+
+
+\begin{table}
+ \begin{tabular}{lll}
+função & descrição \\
+atof & Convert string to double \\
+atoi & Convert string to integer \\
+atol & Convert string to long integer \\
+strtod & Convert string to double \\
+strtol & Convert string to long integer \\
+strtoul & Convert string to unsigned long integer \\
+\end{tabular}
+\caption{stdlib}
+\label{stdlib functions}
+\end{table}
+
+\begin{table}
+ \begin{tabular}{lll}
+função & descrição \\
+cos &	Compute cosine  \\
+sin &	Compute sine  \\
+tan &	Compute tangent  \\
+acos &	Compute arc cosine  \\
+asin &	Compute arc sine  \\
+atan &	Compute arc tangent  \\
+atan2 &	Compute arc tangent with two parameters  \\
+cosh &	Compute hyperbolic cosine  \\
+sinh &	Compute hyperbolic sine  \\
+tanh &	Compute hyperbolic tangent  \\
+exp &	Compute exponential function  \\
+frexp &	Get significand and exponent  \\
+ldexp &	Generate number from significand and exponent  \\
+log &	Compute natural logarithm  \\
+log10 &	Compute common logarithm  \\
+modf &	Break into fractional and integral parts  \\
+pow &	Raise to power  \\
+sqrt &	Compute square root  \\
+ceil &	Round up value  \\
+fabs &	Compute absolute value  \\
+floor &	Round down value  \\
+fmod &	Compute remainder of division  \\
+\end{tabular}
+\caption{math (angulos em radianos)}
+\label{math functions}
+\end{table}
+
+%\input{primesTable.tex}
+
+\newpage
+
+\section{Codigos}
+
+\subsection{Exemplos}
+\lstinputlisting[language=c, label=modelo, caption={Modelo}]{src/modelo.cpp}
+\lstinputlisting[language=c, label=cmp, caption={comparcao de ponto flutuante}]{src/cmp.cpp}
+\lstinputlisting[language=c, label=vim, caption={.vimrc para a configuração do vim}]{src/vim.cpp}
+\lstinputlisting[language=c, label=cin, caption={função que acelara o cin. Não deve ser usada com printf}]{src/cinFast.cpp}
+\lstinputlisting[language=c, label=printf, caption={printf}]{src/printf.cpp}
+\lstinputlisting[language=c, label=map, caption={exemplo de map}]{src/map_ex.cpp}
+\lstinputlisting[language=c, label=multset, caption={exemplo de set e multset}]{src/multset_ex.cpp}
+\lstinputlisting[language=c, label=list, caption={exemplo de list}]{src/list_ex.cpp}
+\lstinputlisting[language=c, label=queue, caption={exemplo de queue}]{src/queue_ex.cpp}
+\lstinputlisting[language=c, label=pq, caption={exemplo de priority queue}]{src/priority_queue_ex.cpp}
+\lstinputlisting[language=c, label=stack, caption={exemplo de stack}]{src/stack_ex.cpp}
+\lstinputlisting[language=c, label=vector, caption={exemplo de vector}]{src/vector_ex.cpp}
+\lstinputlisting[language=c, label=string, caption={exemplo de string}]{src/ex_string.cpp}
+\lstinputlisting[language=c, label=stringstream, caption={exemplo de stringstream}]{src/ex_sstream.cpp}
+
+\lstinputlisting[language=c, label=sort, caption={exemplo de ordenação}]{src/sort_ex.cpp}
+\lstinputlisting[language=c, label=bsearch, caption={pesquisa binária}]{src/bsearch_ex.cpp}
+
+\lstinputlisting[language=c, label=arredondamento, caption={Arredondamento e output em outras bases}]{src/arredondamento_ex.cpp}
+
+\subsection{Teoria dos números}
+\lstinputlisting[language=c, label=mdc, caption={máximo divisor comum e mínimo multiplo comum}]{src/mdc_mmc.cpp}
+\lstinputlisting[language=c, label=primo, caption={decide se um número é primo}]{src/isPrime.cpp}
+\lstinputlisting[language=c, label=fatores, caption={Retorna a fatoração em números primos de abs(n).}]{src/primeMap.cpp}
+\lstinputlisting[language=c, label=mpow, caption={Calcula Valor de $a^b mod$ n de forma rápida.}]{src/mpow.cpp}
+
+\subsection{Programação Dinâmica}
+\lstinputlisting[language=c, label=subsetsum, caption={\textbf{Sub Set Sum}: Verifica se há um sobconjunto dos elementos do vetor cuja soma seja igual a soma pedida.}]{src/subSetSum.cpp}
+
+\subsection{Grafos}
+\lstinputlisting[language=c, label=aciclico, caption={Verifica se o grafo é aciclico.}]{src/aciclico.cpp}
+\lstinputlisting[language=c, label=dijkstra, caption={\textbf{Dijkstra} Caminho minimo 1 para todos pesos positivos.}]{src/dijkstra.cpp}
+\lstinputlisting[language=c, label=setForest, caption={Floresta dijunta de arvores}]{src/dijointSetForest.cpp}
+\lstinputlisting[language=c, label=kruskal, caption={\textbf{Kruskal} Arvore geradora mínima kruskal}]{src/kruskal.cpp}
+\lstinputlisting[language=c, label=bipartido, caption={verifica se um grafo é bipartido}]{src/bipartido.cpp}
+\lstinputlisting[language=c, label=topsort, caption={faz a ordenação topológica de um grafo acíclico}]{src/topSort.cpp}
+\lstinputlisting[language=c, label=maxflow, caption={calcula fluxo máximo, \textbf{Ford-Fulkerson}}]{src/maxFlow.cpp}
+\lstinputlisting[language=c, label=maxflowFast, caption={calcula fluxo máximo, algoritmo mais eficiente porém muito maior em tempo de codificação}]{src/maxFlowFast.cpp}
+
+\subsection{Geometria}
+\lstinputlisting[language=c, label=ponto, caption={ponto e poligono}]{src/ponto.cpp}
+\lstinputlisting[language=c, label=between, caption={Decide se q está sobre o segmento fechado pr.}]{src/Between.cpp}
+\lstinputlisting[language=c, label=emComum, caption={Decide se os segmentos fechados pq e rs têm pontos em comum. }]{src/pontosEmComum.cpp}
+\lstinputlisting[language=c, label=segdist, caption={Calcula a distância do ponto r ao segmento pq. }]{src/segDist.cpp}
+\lstinputlisting[language=c, label=inpoly, caption={Classifica o ponto p em relação ao polígono T. Retorna 0, -1 ou 1 dependendo se p está no exterior, na fronteira ou no interior de T, respectivamente.}]{src/inpoly.cpp}
+
+
+\subsection{Casamento de strings}
+\lstinputlisting[language=c, label=kmp, caption={String matching - Algoritmo \textbf{KMP} - O( n + m)}]{src/kmp.cpp}
+
+\subsection{Outros}
+\lstinputlisting[language=c, label=josephus, caption={josephus problem}]{src/josephus.cpp}
+\lstinputlisting[language=c, label=nextPermutation, caption={Gera as permutações dos elementos da string}]{src/nextPermutation.cpp}
+
+% TODO: grafos ( componentes conexas, pontos de articulação e pontes), sistemas lineares, simplex, polinomios.
+
+% std::ios::sync_with_stdio(false);
+\section{Biblioteca C/C++}
+\subsection{I/O}
+Ignorando entradas na família scanf:
+\begin{lstlisting}[language=c, label=cio, caption={Ignora os dois floats do meio. Retornará 2 no sucesso.}]
+ scanf("%f %*f %*f %d", &a, &b);
+\end{lstlisting}
+
+
+\subsection{Map}
+\lstinputlisting[language=c++, label=map, caption={Referencias map}]{src/map.cpp}
+
+
+\end{document}
