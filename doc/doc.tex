@@ -113,6 +113,7 @@ char* & s
 modifiers & tipo \\ 
 h & short int (d, i, n), or unsigned short int (o, u, x) \\ 
 l & long int (d, i, n), or unsigned long int (o, u, x), or double (e, f, g) \\ 
+ll & long long int (d, i, n), or unsigned long long int (o, u, x) \\ 
 L & long double (e, f, g) \\ 
 \end{tabular}
 \caption{scanf() \%[*][width][modifiers]type}
@@ -184,7 +185,7 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=stack, caption={exemplo de stack}]{src/stack_ex.cpp}
 \lstinputlisting[language=c, label=vector, caption={exemplo de vector}]{src/vector_ex.cpp}
 \lstinputlisting[language=c, label=string, caption={exemplo de string}]{src/ex_string.cpp}
-\lstinputlisting[language=c, label=stringstream, caption={exemplo de stringstream}]{src/ex_sstream.cpp}
+\lstinputlisting[language=c, label=stringstream, caption={exemplo de stringstream}]{src/sstream_ex.cpp}
 
 \lstinputlisting[language=c, label=sort, caption={exemplo de ordenação}]{src/sort_ex.cpp}
 \lstinputlisting[language=c, label=bsearch, caption={pesquisa binária}]{src/bsearch_ex.cpp}
@@ -223,6 +224,7 @@ fmod &	Compute remainder of division  \\
 
 \subsection{Outros}
 \lstinputlisting[language=c, label=josephus, caption={josephus problem}]{src/josephus.cpp}
+\lstinputlisting[language=c, label=simplex, caption={Simplex}]{src/simplex.cpp}
 \lstinputlisting[language=c, label=nextPermutation, caption={Gera as permutações dos elementos da string}]{src/nextPermutation.cpp}
 
 % TODO: grafos ( componentes conexas, pontos de articulação e pontes), sistemas lineares, simplex, polinomios.
