@@ -4,12 +4,12 @@ using namespace std;
 
 int main ()
 {
-  vector<int> myvector (3,100);
+  vector<int> myvector (3,100); // (100 100 100)
   vector<int>::iterator it;
 
   myvector.reserve(100);
 
-  for (i=0; i<myvector.size(); i++)
+  for (int i=0; i<myvector.size(); i++)
     myvector.at(i)=i; // = myvector[i] = i
 
   it = myvector.begin();
@@ -18,6 +18,7 @@ int main ()
 
   vector<int> anothervector (2,400);
   int myarray [] = { 501,502,503 };
+  vector<int> initializer(myarray/*PointerInicio*/, myarray+sizeof(myarray)/sizeof(int)/*PointerFim*/);
   myvector.insert (it+2,anothervector.begin(),anothervector.end());
   myvector.insert (myvector.begin(), myarray, myarray+3);
 

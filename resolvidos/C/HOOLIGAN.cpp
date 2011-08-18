@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <set>
 
 using namespace std;
-//using namespace tr1;
 
 #define fori(i,n) for(int i=0; i < (n); ++i)
 #define forr(i,a,b) for(int i=(a); i <= (b); ++i)
@@ -80,5 +80,183 @@ struct simplex {
 };
 
 int main() {
+	int n,m,g;
+	int played[50][50];
+	int r[50]; // Jogos restantes
+
+	while(cin >> n >> m >> g) {
+		if(!n) {
+			return 0;
+		}
+		vector<pair<int,int> > placar(n);
+
+		const int numJogos=(n-1)*m;
+		for(int i=0; i < n; i++) {
+			placar[i].first = 0, placar[i].second = i;
+			r[i] = numJogos;
+			for(int j=i+1; j < n; j++) {
+				played[i][j]=0;
+			}
+		}
+
+		// cria vet de pts
+		int maior=-1;
+		for(int jogo=0; jogo < g; jogo++) {
+			char res;
+			int i,j;
+			cin >> i >> res >> j;
+			switch(res) {
+				case '=':
+				placar[i].first++;
+				placar[j].first++;
+				break;
+				case '>': // i ganha
+				placar[i].first+=2;
+				break;
+				default: // j ganha
+				placar[j].first+=2;
+				break;
+			}
+
+			r[i]--, r[j]--;
+			if(i>j) played[j][i]++;
+			else played[i][j]++;
+
+			if(i!=0 && maior < placar[i].first) maior = placar[i].first;
+			if(j!=0 && maior < placar[j].first) maior = placar[j].first;
+		}
+		// da vitorias pra 0
+		for(int i=1; i < n; i++) {
+			int dif=(m-played[0][i]);
+			if(dif) {
+				placar[0].first+=2*(dif);
+				r[i]-=(dif);
+				played[0][i]+=(dif);
+			}
+		}
+		// Se X <= placar maior -> N
+		if(placar[0].first <= maior) {
+			cout << "N\n";
+		} else {
+			sort(placar.begin(), placar.end());
+
+			// Pivota placar
+			int v=-1,d=-1;
+			for(int i=0; i < n-1; i++) {
+				if(placar[i].first+r[ placar[i].second ] < placar[n-1].first-1) {
+					v = i;
+				}
+				else {
+					break;
+				}
+			}
+			for(int i=v+1; i < n-1; i++) {
+				if(placar[i].first+r[ placar[i].second ] > placar[n-1].first-1) {
+					d = i;
+					break;
+				}
+			}
+
+			if(d == -1) {
+				cout << "Y\n";
+			} else if(v == -1) {
+				cout << "N\n";
+			}else {
+				// Conta qt de arestas
+				vector<double> verticesI;
+				vector<vector<double> > A;
+				vector<double> b;
+				vector<pair<int, int> > arestas;
+				for(int i=d; i < n-1; i++) {
+					for(int j=0; j <= v; j++) {
+						int max,min;
+						if(placar[i].second > placar[j].second) {
+							max=placar[i].second;
+							min=placar[j].second;
+						} else {
+							max=placar[j].second;
+							min=placar[i].second;
+						}
+						if(played[min][max] < m) {
+							arestas.push_back(make_pair(placar[i].second, placar[j].second));
+							verticesI.push_back(0); // Ao fim, verticesI vai ter tantos elementos quantos vertices houverem
+							b.push_back(m-played[min][max]);
+						}
+					}
+				}
+				if(!verticesI.size()) {
+					cout << "N\n";
+					continue;
+				}
+				verticesI[0]=1; int k=0;
+
+				while(A.size() < b.size()-1) {
+					A.push_back(verticesI); verticesI[k++]=0;verticesI[k]=1;
+				}
+				A.push_back(verticesI);
+
+				int nedges = A.size();
+				// Prossegue a montagem do tableau
+				vector<double> c(nedges, 1);
+
+				// no derrotas=somatorio dos vertices
+				int posl=0;set<int> destinos;
+				for(int i = d; i < n-1; i++) {
+					vector<double> curlinha(nedges);
+					for(int k=0; k < posl; k++) {
+						curlinha[k] = 0;
+					}
+					for(int j=0; j <= v; j++) {
+						int max,min;
+						if(placar[i].second > placar[j].second) {
+							max=placar[i].second;
+							min=placar[j].second;
+						} else {
+							max=placar[j].second;
+							min=placar[i].second;
+						}
+						if(played[min][max] < m) {
+							destinos.insert(placar[j].second);
+							curlinha[posl++] = 1;
+						}
+					}
+					for(int k=posl+1; k < nedges; k++) {
+						curlinha[k] = 0;
+					}
+					A.push_back(curlinha);
+					b.push_back(r[i]-(placar[n-1].first-1 - placar[i].first) );
+				}
+				// Fecha igualdade (repete a e b com valores negativados)
+				int len=A.size(), last=len;
+				for(int i=nedges; i < len; i++) {
+					A.push_back(A[i]);
+					for(int j=0; j < A[last].size(); j++ ) {
+						A[last][j] = -A[last][j];
+					}
+					last++;
+					b.push_back(-b[i]);
+				}
+				// Restricoes de vitorias
+				for(set<int>::iterator i=destinos.begin(); i != destinos.end(); i++) {
+					vector<double> curlinha(arestas.size(), 0);
+					for(int j=0; j < arestas.size(); j++) {
+						if(*i == arestas[j].second) {
+							curlinha[j] = 1;
+						}
+					}
+					A.push_back(curlinha);
+					int vitorias = (placar[n-1].first-placar[*i].first-1)/2;
+					b.push_back(vitorias > r[*i] ? r[*i] : vitorias);
+				}
+
+				// Ufa! Soh rodar o simplex agora
+				simplex sim(A,b,c);
+				vector<double> s = sim.solve();
+				if(!s.size()) cout << "N\n";
+				else cout << "Y\n";
+			}
+		}
+	}
 	return 0;
 }
+
