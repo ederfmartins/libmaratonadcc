@@ -5,7 +5,7 @@ void squeeze(prime_map& M, int& n, int p)
 }
 void factor(int n, prime_map& M)
 {
-	if (n < 0) return n = -n;
+	if (n < 0) { factor(-n, M); return; }
 	if (n < 2) return;
 
 	squeeze(M, n, 2);
