@@ -12,7 +12,7 @@ uint64_t pavalia(uint64_t a) {
 	else if(a<=1000000llu)
 		return 29900llu+(a-10000llu)*5llu;
 	else
-		return 4979400 + (a-1000000)*7;
+		return 4979900llu + (a-1000000llu)*7;
 }
 
 uint64_t avalia(uint64_t a, uint64_t b) {
@@ -24,10 +24,10 @@ uint64_t inv(uint64_t A) {
 		return A/2llu;
 	else if(A <= 29900llu)
 		return 100llu+(A-200llu)/3llu;
-	else if(A <= 4979400llu)
+	else if(A <= 4979900llu)
 		return 10000llu+(A-29900llu)/5llu;
 	else {
-		return 1000000llu+(A-4979400llu)/7llu;
+		return 1000000llu+(A-4979900llu)/7llu;
 	}
 }
 
@@ -40,7 +40,57 @@ int main() {
 		meio=(sum+1)/2;
 		A=sum;
 
-		if(meio <= 100) {
+		z0=(2*A-B)/4;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 1
+			continue;
+		}
+		z0=(3*A-B-100)/5;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 2
+			continue;
+		}
+		z0=(3*A-B)/6;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 3
+			continue;
+		}
+		z0=(5*A-B-20000)/8;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 4
+			continue;
+		}
+		z0=(5*A-B)/10;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 5
+			continue;
+		}
+		z0=(7*A-B-2000000)/12;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 6
+			continue;
+		}
+		z0=(7*A-B)/14;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 7
+			continue;
+		}
+		z0=(5*A-B-20100)/7;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 8
+			continue;
+		}
+		z0=(7*A-B-2020000)/10;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 9
+			continue;
+		}
+		z0=(7*A-B-2020100)/9;
+		if(avalia(sum-z0, z0) == B) {
+			cout << pavalia(z0) << endl; // 10
+			continue;
+		}
+		/*if(meio <= 100) {
 			// caso 1 ou 2
 			z0=(2*A-B)/4;
 			if(avalia(sum-z0, z0) == B)
@@ -67,7 +117,7 @@ int main() {
 			}
 		}
 		else if(meio <= 1000000) {
-			// casos 4, 5 ou 6 || 8
+			// casos 4, 5 ou 6 || 8, 9 ou 10
 			z0 = (5*A-B-20000)/8;
 			if(avalia(sum-z0, z0) == B)
 				cout << pavalia(z0) << endl; // caso 4
@@ -76,17 +126,27 @@ int main() {
 				if(avalia(sum-z0, z0) == B)
 					cout << pavalia(z0) << endl; // caso 5
 				else {
-					z0 = (7*A-B-2000500)/12;
+					z0 = (7*A-B-2000000)/12;
 					if(avalia(sum-z0, z0) == B)
 						cout << pavalia( z0 ) << endl; // caso 6
-					else
-						cout << pavalia( (5*A-B-20100)/7 ) << endl; // caso 8
+					else {
+						z0=(5*A-B-20100)/7;
+						if(avalia(sum-z0, z0) == B)
+							cout << pavalia( z0 ) << endl; // caso 8
+						else {
+							z0=(7*A-B-2020000)/10;
+							if(avalia(sum-z0, z0) == B)
+								cout << pavalia( z0 ) << endl; // caso 9
+							else
+								cout << pavalia( (7*A-B-2020100)/9 ) << endl; // caso 10
+						}
+					}
 				}
 			}
 		}
 		else {
 			// casos 6 ou 7 || 9 ou 10
-			z0=(7*A-B-2000500)/12;
+			z0=(7*A-B-2000000)/12;
 			if(avalia(sum-z0, z0) == B)
 				cout << pavalia(z0) << endl; // caso 6
 			else {
@@ -94,14 +154,14 @@ int main() {
 				if(avalia(sum-z0, z0) == B)
 					cout << pavalia( z0 ) << endl; // caso 7
 				else {
-					z0 = (7*A-B-2020500)/10;
+					z0 = (7*A-B-2020000)/10;
 					if(avalia(sum-z0, z0) == B)
 						cout << pavalia( z0 ) << endl; // caso 9
 					else
-						cout << pavalia( (7*A-B-2020600)/9 ) << endl; // caso 10
+						cout << pavalia( (7*A-B-2020100)/9 ) << endl; // caso 10
 				}
 			}
-		}
+		}*/
 	}
 	return 0;
 }
