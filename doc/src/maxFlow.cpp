@@ -15,24 +15,28 @@ bool bfs(int n, int ini, int fim)
 	while (s != e)
 	{
 		no = fila[s++];
-		
-		if (visitados[no]) continue; 
-		visitados[no] = true;
-		
+
+		if (visitados[no] == 2) continue; 
+		visitados[no] = 2;
+
 		for (int i = 0; i < n; i++) 
 		{
-			if (!visitados[i])
+			if (visitados[i] < 2)
 			{
 				if(grafo[no][i] - f[no][i] > 0)
 				{
 					pred[i] = no;
 					if (i == fim) return true;
-					fila[e++] = i;
+					if(visitados[i] == 0)
+					{
+						fila[e++] = i;
+						visitados[i] = 1;
+					}
 				}
 			}
 		}
 	}
-	
+
 	return false;
 }
 
