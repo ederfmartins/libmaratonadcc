@@ -12,9 +12,9 @@ bool subSetSum(int M, int c)
 	
 	for(int i = 0; i < n; i++)
 	{
-		for(int j = M; j >= tesouro[i]; j--)
+		for(int j = M; j >= vet[i]; j--)
 		{
-			m[j] |= m[j - tesouro[i]];
+			m[j] |= m[j - vet[i]];
 		}
 	}
 	
