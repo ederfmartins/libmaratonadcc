@@ -197,6 +197,12 @@ fmod &	Compute remainder of division  \\
 \lstinputlisting[language=c, label=primo, caption={decide se um número é primo}]{src/isPrime.cpp}
 \lstinputlisting[language=c, label=fatores, caption={Retorna a fatoração em números primos de abs(n).}]{src/primeMap.cpp}
 \lstinputlisting[language=c, label=mpow, caption={Calcula Valor de $a^b mod$ n de forma rápida.}]{src/mpow.cpp}
+\lstinputlisting[language=c, label=mulmod, caption={Calcula (a*b)\%c de forma rápida.}]{src/mulmod.cpp}
+\lstinputlisting[language=c, label=axbmodc, caption={ Computa x tal que a*x = b (mod c). Quando a equação não tem solução, retorna algum valor arbitrário errado, mas basta conferir o resultado.}]{src/axbmodc.cpp}
+\lstinputlisting[language=c, label=discreteLogarithm, caption={\textbf{Baby-step Giant-step algorithm} Calcula o menor valor de e para $b^e = n$ mod p. Retorna -1 se eh impossivel}]{src/discreteLogarithm.cpp}
+
+\subsection{Estruturas de dados}
+\lstinputlisting[language=c, label=bigint, caption={Números de precisão harbitrária.}]{src/bigint.cpp}
 
 \subsection{Programação Dinâmica}
 \lstinputlisting[language=c, label=subsetsum, caption={\textbf{Sub Set Sum}: Verifica se há um sobconjunto dos elementos do vetor cuja soma seja igual a soma pedida.}]{src/subSetSum.cpp}
