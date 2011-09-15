@@ -39,9 +39,10 @@
 \contentsline {lstlisting}{\numberline {39}Decide se os segmentos fechados pq e rs t\IeC {\^e}m pontos em comum.}{18}
 \contentsline {lstlisting}{\numberline {40}Calcula a dist\IeC {\^a}ncia do ponto r ao segmento pq.}{18}
 \contentsline {lstlisting}{\numberline {41}Classifica o ponto p em rela\IeC {\c c}\IeC {\~a}o ao pol\IeC {\'\i }gono T. Retorna 0, -1 ou 1 dependendo se p est\IeC {\'a} no exterior, na fronteira ou no interior de T, respectivamente.}{18}
-\contentsline {lstlisting}{\numberline {42}String matching - Algoritmo \textbf {KMP} - O( n + m)}{18}
-\contentsline {lstlisting}{\numberline {43}josephus problem}{19}
-\contentsline {lstlisting}{\numberline {44}Simplex}{19}
+\contentsline {lstlisting}{\numberline {42}Simplex}{18}
+\contentsline {lstlisting}{\numberline {43}String matching - Algoritmo \textbf {KMP} - O( n + m)}{19}
+\contentsline {lstlisting}{\numberline {44}josephus problem}{20}
 \contentsline {lstlisting}{\numberline {45}Gera as permuta\IeC {\c c}\IeC {\~o}es dos elementos da string}{20}
-\contentsline {lstlisting}{\numberline {46}Ignora os dois floats do meio. Retornar\IeC {\'a} 2 no sucesso.}{20}
-\contentsline {lstlisting}{\numberline {47}Referencias map}{20}
+\contentsline {lstlisting}{\numberline {46}Exemplo de gera\IeC {\c c}\IeC {\~a}o de permuta\IeC {\c c}\IeC {\~o}es dos elementos da string, usando backtracking}{20}
+\contentsline {lstlisting}{\numberline {47}Ignora os dois floats do meio. Retornar\IeC {\'a} 2 no sucesso.}{21}
+\contentsline {lstlisting}{\numberline {48}Referencias map}{21}
