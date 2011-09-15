@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.8)  15 SEP 2011 16:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.8)  15 SEP 2011 16:54
 entering extended mode
  %&-line parsing enabled.
 **doc.tex
@@ -451,30 +451,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16])
 (./src/ponto.cpp) [17] (./src/Between.cpp) (./src/pontosEmComum.cpp)
-(./src/segDist.cpp) (./src/inpoly.cpp) (./src/kmp.cpp) [18] (./src/josephus.cpp
-) (./src/simplex.cpp
+(./src/segDist.cpp) (./src/inpoly.cpp) (./src/simplex.cpp [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19])
-(./src/nextPermutation.cpp)
+)
+(./src/kmp.cpp) [19] (./src/josephus.cpp) (./src/nextPermutation.cpp)
+(./src/backtrakingEx.cpp) [20]
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (./src/map.cpp
-[20]) [21
-
-] (./doc.aux)
+) (./src/map.cpp)
+[21] (./doc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4059 strings out of 495041
- 49972 string characters out of 1181898
- 505248 words of memory out of 3000000
- 7091 multiletter control sequences out of 15000+50000
+ 4073 strings out of 495041
+ 50144 string characters out of 1181898
+ 480921 words of memory out of 3000000
+ 7102 multiletter control sequences out of 15000+50000
  7810 words of font info for 28 fonts, out of 3000000 for 9000
  30 hyphenation exceptions out of 8191
- 33i,8n,52p,721b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,8n,52p,721b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/
@@ -487,7 +485,7 @@ fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb>
-Output written on doc.pdf (21 pages, 271709 bytes).
+Output written on doc.pdf (21 pages, 273038 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
