@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.8)  6 SEP 2011 16:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.8)  15 SEP 2011 16:27
 entering extended mode
  %&-line parsing enabled.
 **doc.tex
@@ -422,47 +422,45 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
 ) (./src/cmp.cpp
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 3.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2.
  [3])
 (./src/vim.cpp) (./src/cinFast.cpp) (./src/printf.cpp) (./src/map_ex.cpp)
 (./src/multset_ex.cpp [4]) (./src/list_ex.cpp) (./src/queue_ex.cpp)
 (./src/priority_queue_ex.cpp [5]) (./src/stack_ex.cpp) (./src/vector_ex.cpp)
 (./src/ex_string.cpp [6]) (./src/sstream_ex.cpp) (./src/sort_ex.cpp)
 (./src/bsearch_ex.cpp) [7] (./src/arredondamento_ex.cpp) (./src/mdc_mmc.cpp)
-(./src/isPrime.cpp) (./src/primeMap.cpp) (./src/mpow.cpp [8])
-(./src/subSetSum.cpp) (./src/lis1d.cpp) (./src/lis1dfast.cpp [9])
-(./src/aciclico.cpp) (./src/dijkstra.cpp) (./src/dijointSetForest.cpp [10])
-(./src/kruskal.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11])
-(./src/bipartido.cpp) (./src/topSort.cpp) (./src/maxFlow.cpp [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-(./src/maxFlowFast.cpp [13]
+(./src/isPrime.cpp) (./src/primeMap.cpp) (./src/mpow.cpp [8]) (./src/mulmod.cpp
+) (./src/axbmodc.cpp) (./src/discreteLogarithm.cpp) (./src/bigint.cpp [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14])
-(./src/ponto.cpp) (./src/Between.cpp) (./src/pontosEmComum.cpp)
-(./src/segDist.cpp [15]) (./src/inpoly.cpp) (./src/kmp.cpp) (./src/josephus.cpp
-[16]) (./src/simplex.cpp
+ [10])
+(./src/subSetSum.cpp) (./src/lis1d.cpp [11]) (./src/lis1dfast.cpp)
+(./src/aciclico.cpp) (./src/dijkstra.cpp [12]) (./src/dijointSetForest.cpp)
+(./src/kruskal.cpp [13]) (./src/bipartido.cpp) (./src/topSort.cpp [14])
+(./src/maxFlow.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17])
+ [15])
+(./src/maxFlowFast.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16])
+(./src/ponto.cpp) [17] (./src/Between.cpp) (./src/pontosEmComum.cpp)
+(./src/segDist.cpp) (./src/inpoly.cpp) (./src/kmp.cpp) [18] (./src/josephus.cpp
+) (./src/simplex.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19])
 (./src/nextPermutation.cpp)
-Underfull \vbox (badness 4981) has occurred while \output is active []
-
-
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (./src/map.cpp
-[18]) [19
+[20]) [21
 
 ] (./doc.aux)
 
@@ -470,10 +468,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3978 strings out of 495041
- 48989 string characters out of 1181898
- 501624 words of memory out of 3000000
- 7022 multiletter control sequences out of 15000+50000
+ 4059 strings out of 495041
+ 49972 string characters out of 1181898
+ 505248 words of memory out of 3000000
+ 7091 multiletter control sequences out of 15000+50000
  7810 words of font info for 28 fonts, out of 3000000 for 9000
  30 hyphenation exceptions out of 8191
  33i,8n,52p,721b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -489,9 +487,9 @@ fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb>
-Output written on doc.pdf (19 pages, 257859 bytes).
+Output written on doc.pdf (21 pages, 271709 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
