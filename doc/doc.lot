@@ -1,7 +1,8 @@
 \select@language {brazil}
-\contentsline {table}{\numberline {1}{\ignorespaces Limites de representa\IeC {\c c}\IeC {\~a}o de dados}}{2}
-\contentsline {table}{\numberline {2}{\ignorespaces Fatorial}}{2}
-\contentsline {table}{\numberline {3}{\ignorespaces scanf() - \%[*][width][modifiers]type}}{2}
-\contentsline {table}{\numberline {4}{\ignorespaces scanf() \%[*][width][modifiers]type}}{2}
-\contentsline {table}{\numberline {5}{\ignorespaces stdlib}}{2}
-\contentsline {table}{\numberline {6}{\ignorespaces math (angulos em radianos)}}{3}
+\contentsline {table}{\numberline {1}{\ignorespaces Complexidade m\IeC {\'a}xima da solu\IeC {\c c}\IeC {\~a}o em fu\IeC {\c c}\IeC {\~a}o do tamanho da entrada}}{2}
+\contentsline {table}{\numberline {2}{\ignorespaces Limites de representa\IeC {\c c}\IeC {\~a}o de dados}}{2}
+\contentsline {table}{\numberline {3}{\ignorespaces Fatorial}}{2}
+\contentsline {table}{\numberline {4}{\ignorespaces scanf() - \%[*][width][modifiers]type}}{3}
+\contentsline {table}{\numberline {5}{\ignorespaces scanf() \%[*][width][modifiers]type}}{3}
+\contentsline {table}{\numberline {6}{\ignorespaces stdlib}}{3}
+\contentsline {table}{\numberline {7}{\ignorespaces math (angulos em radianos)}}{3}
