@@ -1,73 +1,43 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <math.h>
-
-#include <inttypes.h>
-#include <ctype.h>
-#include <limits.h>
-
-#include <algorithm>
-#include <utility>
 #include <iostream>
-
-#include <map>
-#include <set>
-#include <vector>
-#include <list>
-#include <queue>
-#include <sstream>
 
 using namespace std;
 
-#define abs(a) ((a) > 0 ? (a) : -(a))
+#define TAM_SENHA 6
 
-int read()
+int senha[TAM_SENHA];
+
+string decode()
+{
+	string ret;
+	
+	for (int i = 0; i < TAM_SENHA; i++)
+	{
+		switch(senha[i])
+		{
+			case 1: ret += "0 "; break;
+			case 2: ret += "1 "; break;
+			case 4: ret += "2 "; break;
+			case 8: ret += "3 "; break;
+			case 16: ret += "4 "; break;
+			case 32: ret += "5 "; break;
+			case 64: ret += "6 "; break;
+			case 128: ret += "7 "; break;
+			case 256: ret += "8 "; break;
+			case 512: ret += "9 "; break;
+		}
+	}
+	
+	return ret;
+}
+
+int readAsBitSet()
 {
 	int tmp, ret;
 	cin >> tmp;
 	ret = 1<<tmp;
-	//cout << "bla" << hex << ret << endl;
 	cin >> tmp;
 	ret |= 1<<tmp;
-	//cout << hex << ret << endl;
-	return ret;
-}
-
-int senha[6];
-string decode()
-{
-	string ret;
-	char digit[4];
-	digit[2] = '\0';
-	
-	for (int i = 0; i < 6; i++)
-	{
-		int masq;
-		//cout << hex << senha[i] << endl;
-		for (int j = 0; j < 10; j++)
-		{
-			masq = 1<<j;
-			if ((senha[i] & masq) != 0)
-			{
-
-				if (i == 5)
-				{
-					digit[0] = j + '0';
-					digit[1] = '\0';				
-				}
-				else
-				{
-					digit[0] = j + '0';
-					digit[1] = ' ';
-				}
-				
-				ret += digit;
-				break;
-			}
-		}
-	}
-	
 	return ret;
 }
 
@@ -76,35 +46,17 @@ string getsenha(int dicas)
 	int a, b, c, d, e, tmp;
 	char s;
 	
-	a = read(); //cout << hex << a << endl;
-	b = read(); //cout << hex << b << endl;
-	c = read(); //cout << hex << c << endl;
-	d = read(); //cout << hex << d << endl;
-	e = read(); //cout << hex << e << endl;
+	for (int i = 0; i < TAM_SENHA; i++) senha[i] = 0xfff;
 	
-	for (int i = 0; i < 6; i++)
+	for (int j = 0; j < dicas; j++)
 	{
-		cin >> s;
-		switch(s)
-		{
-			case 'A': senha[i] = a; break;
-			case 'B': senha[i] = b; break;
-			case 'C': senha[i] = c; break;
-			case 'D': senha[i] = d; break;
-			case 'E': senha[i] = e; break;
-			default: cout << "ops" <<endl;
-		}
-	}
+		a = readAsBitSet();
+		b = readAsBitSet();
+		c = readAsBitSet();
+		d = readAsBitSet();
+		e = readAsBitSet();
 	
-	for (int j = 1; j < dicas; j++)
-	{
-		a = read();
-		b = read();
-		c = read();
-		d = read();
-		e = read();
-	
-		for (int i = 0; i < 6; i++)
+		for (int i = 0; i < TAM_SENHA; i++)
 		{
 			cin >> s;
 			switch(s)
@@ -131,7 +83,7 @@ int main()
 		cin >> n;
 		if (n == 0) break;
 		
-		cout << "Teste " << t++ << endl << getsenha(n) << endl << endl;
+		cout << "Teste " << t++ << endl << getsenha(n) << endl << endl;		
 	}
 
 	return 0;

@@ -1,58 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-
-#include <inttypes.h>
-#include <ctype.h>
-
-#include <algorithm>
-#include <utility>
 #include <iostream>
-
-#include <map>
-#include <set>
-#include <vector>
-#include <sstream>
-
-/** 1353. Festa Junina - Clique maxima em grafos nao direcionados */
+#include <bitset>
+#include <string.h>
+#include <stdio.h>
 
 using namespace std;
 
-#define abs(a) ((a) > 0 ? (a) : -(a))
+/** 1353. Festa Junina - Clique maxima */
+
 #define MAX 20
 
-char grafo[MAX][MAX];
-int tam;
-char pass[MAX];
+int grafo[MAX];
+int n;
 
-bool canInclude(int n)
+bool in(int vertice, int curSet)
 {
-	for (int i = 0; i < tam; i++)
-	{
-		if (pass[i] && grafo[i][n] == 1)
-		{
-			return false;
-		}
-	}
-
-	return true;
+  return 1<<vertice & curSet;
 }
 
-int clique(int n)
+int clique()
 {
 	int max = 0;
 
-	if (n >= tam) return 0;
-
-	max = clique(n + 1);
-
-	if (canInclude(n))
+	int numSets = 1<<n;
+	
+	for (int curSet = 1; curSet < numSets; curSet++)
 	{
-		pass[n] = 1;
-		int max1 = 1 + clique(n + 1);
-		pass[n] = 0;
-		max = max1 > max ? max1 : max;
+	  bool validSet = true;
+	  
+	  for (int i = 0; i < n; i++)
+	  {
+		//if (curSet == 29) cout << i << " " << in(i, curSet) << " " << (grafo[i] & curSet != 0) << endl;
+		if (in(i, curSet) && ((grafo[i] & curSet) != 0))
+		{
+		  validSet = false;
+		  break;
+		}
+	  }
+	  
+	  int t = bitset<MAX>(curSet).count();
+	  //cout << curSet << " " << bitset<MAX>(curSet) << " " << validSet << " " << t << endl;
+	  if (validSet && (max < t))
+	  {
+		max = t;
+	  }
 	}
 
 	return max;
@@ -61,30 +51,33 @@ int clique(int n)
 
 int main()
 {
-	int n, teste = 1;
+	int teste = 1;
 
 	while (cin >> n)
 	{
 		if (n == 0) break;
-		tam = n;
 
+		memset(grafo, 0, n*sizeof(int));
+		
 		for (int i = 0; i < n; i++)
 		{
 			int t;
-			memset(grafo[i], 0, n);
 
 			while (cin >> t)
 			{
 				if (t == 0) break;
-				grafo[i][t-1] = 1;
-				grafo[t-1][i] = 1;
+				grafo[i] |= 1<<(t-1);
+				grafo[t-1] |= 1<<i;
 			}
+			//cout << i << " " << (bitset<8>) grafo[i] << endl;
 		}
+		
+		//for (int i = 0; i < n; i++) cout << (bitset<8>) grafo[i] << endl;
 
 		cout << "Teste " << teste++ << endl;
-		cout << clique(0) << endl;
+		cout << clique() << endl;
 		cout << endl;
 	}
+	
 	return 0;
 }
-
