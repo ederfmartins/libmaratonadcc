@@ -66,13 +66,13 @@ void kruskal(Grafo& graph, Grafo& mst)
     for (int i = 0; i < edge_count; ++i)
     {
         struct edge e = edges[i];
-        int uset = dsf_find_set(dsf, e.u);
-        int vset = dsf_find_set(dsf, e.v);
+        int uset = dsf_find_set(&dsf, e.u);
+        int vset = dsf_find_set(&dsf, e.v);
         if (uset != vset)
         {
             mst.adj[e.u][e.v] = e.weight;
 			mst.edgeCnt++;
-            dsf_union(dsf, uset, vset);
+            dsf_union(&dsf, uset, vset);
         }
     }
 

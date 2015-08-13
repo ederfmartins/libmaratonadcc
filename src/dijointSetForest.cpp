@@ -7,6 +7,7 @@ struct dsf
     int rank[SIZE];
 };
 typedef struct dsf * disjoint_set_forest_p;
+typedef struct dsf disjoint_set_forest;
 
 void dsf_init(disjoint_set_forest_p forest, int element_count)
 {

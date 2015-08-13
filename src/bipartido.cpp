@@ -16,7 +16,7 @@ bool bipartido(int v, int color = 1)
 	{
 		if (grafo[v][i])
 		{
-			if (!pass[i]) ret = dfs(i, color);
+			if (!pass[i]) ret = bipartido(i, color);
 			else if (pass[i] == thisColor) return false;
 
 			if (!ret) return false;

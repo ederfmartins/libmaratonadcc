@@ -1,1 +1,5 @@
 *.lot
+*.aux
+*.log
+*.lol
+*.toc
