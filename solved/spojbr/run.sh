@@ -1,12 +1,14 @@
-prob=colisoes
+prob=alvo
+#subdir=test
+subdir=
 
-for i in `seq 1 1 20`
+for i in `seq 1 1 10`
 do
-	for j in 1 2 3 7
+	for j in `seq 1 1 10`
 	do
 		echo $i $j
-		./a.out <$prob/test$i/in$j >out.txt
-		diff $prob/test$i/out$j out.txt
+		./a.out <$prob/$subdir$i/in$j >out.txt
+		diff $prob/$subdir$i/out$j out.txt
 	done
 
 done
